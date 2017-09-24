@@ -62,6 +62,13 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
       (__ \ 'id).read[Int]
     )(Person)
 
+
+  /**
+    * https://alvinalexander.com/scala/how-to-write-play-framework-http-post-request-json-web-service
+    * http://www.baeldung.com/rest-api-with-play
+    *
+    * @return
+    */
   def parseJson = Action.async { implicit request: Request[AnyContent] =>
 
     val json = request.body.asJson.get

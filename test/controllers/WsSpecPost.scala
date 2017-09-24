@@ -18,7 +18,11 @@ class WsSpecPost extends WordSpec with Matchers with ScalaFutures with Eventuall
 
     /**
       * Sending an 2xx 'early' response before end of request was received... Note that the connection will be closed after this response. Also, many clients will not read early responses! Consider only issuing this response after the request data has been completely read!
-      * @return
+
+https://www.playframework.com/documentation/2.6.x/WSMigration26
+
+      If you are running a functional test, you can use the play.api.test.WsTestClient, which will start up and shut down a standalone WSClient instance:
+
       */
 
     "render the index page from a new instance of controller" in {
