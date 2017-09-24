@@ -14,6 +14,7 @@ import scala.concurrent.Future
   *
   * cd /i/p/ralfoenning/playtest/; curl -v -X POST --header "Content-Type: application/json" --data "@./test/resources/jsontest.json" http://localhost:9000/jsontest
   *
+  * curl -X POST   http://localhost:9000/jsontest   -H 'cache-control: no-cache'   -H 'content-type: application/json'   -d '{"name": "Jim Davis","country": "United Kingdom","id": 44952}'
  */
 @Singleton
 class HomeController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
