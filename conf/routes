@@ -6,6 +6,7 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
 POST       /etmp-data/test                    controllers.HomeController.loadBusinessUsers
+POST       /etmp-data/testsync                    controllers.HomeController.loadBusinessUsersSync
 POST       /jsontest                   controllers.HomeController.parseJson
 
 

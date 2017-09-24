@@ -30,11 +30,22 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     Ok(views.html.index())
   }
 
+
   def loadBusinessUsers = {
     Logger.info("Import business users - dry-run")
     Action.async(parse.tolerantText) { implicit request =>
       println(request.body)
-      Future.successful(Ok)
+      Future.successful(Ok(request.body))
+    }
+  }
+
+  def loadBusinessUsersSync = {
+    Logger.info("Import business users - dry-run")
+    Action.apply(parse.tolerantText) { request: Request[String] =>
+
+      val body = request.body
+      println(body)
+      Ok(body)
     }
   }
 
