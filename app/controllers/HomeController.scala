@@ -10,8 +10,10 @@ import play.api.mvc.{Action, _}
 import scala.concurrent.Future
 
 /**
- * This controller creates an `Action` to handle HTTP requests to the
- * application's home page.
+  * curl -v -X POST --header "X-requested-with: foo" --data-binary "@/i/p/ralfoenning/playtest/test/resources/prod-bu-total-170313-cleans.txt" http://localhost:9000/etmp-data/test
+  *
+  * cd /i/p/ralfoenning/playtest/; curl -v -X POST --header "Content-Type: application/json" --data "@./test/resources/jsontest.json" http://localhost:9000/jsontest
+  *
  */
 @Singleton
 class HomeController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
@@ -48,13 +50,13 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
       (__ \ 'id).read[Int]
     )(Person)
 
-  def parseJson = Action { implicit request: Request[AnyContent] =>
+  def parseJson = Action.async { implicit request: Request[AnyContent] =>
 
     val json = request.body.asJson.get
 
     val person = json.as[Person]
 
 
-    Ok("name : " + person.name)
+    Future.successful(Ok("name : " + person.name))
   }
 }
