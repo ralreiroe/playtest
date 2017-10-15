@@ -20,3 +20,6 @@ libraryDependencies += "com.typesafe.play" %% "play-ws-standalone-xml" % "1.0.1"
 
 // Adds additional packages into conf/routes
 // play.sbt.routes.RoutesKeys.routesImport += "com.example.binders._"
+
+
+//retrieveManaged := true   //uncomment to all the project's dependencies in lib_managed
