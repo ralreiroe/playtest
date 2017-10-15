@@ -21,5 +21,5 @@ libraryDependencies += "com.typesafe.play" %% "play-ws-standalone-xml" % "1.0.1"
 // Adds additional packages into conf/routes
 // play.sbt.routes.RoutesKeys.routesImport += "com.example.binders._"
 
-
+//https://stackoverflow.com/questions/7979336/how-do-i-get-sbt-to-gather-all-the-jar-files-my-code-depends-on-into-one-place
 //retrieveManaged := true   //uncomment to all the project's dependencies in lib_managed
