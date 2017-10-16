@@ -26,7 +26,9 @@ class TypesafeConfigSpec extends WordSpec with Matchers {
       val config = ConfigFactory.load("application2")
 
       import scala.collection.JavaConversions._
-      val keySet: util.Set[String] = config.getObject("exchanges").keySet()
+      val keySetJava: util.Set[String] = config.getObject("exchanges").keySet()
+
+      val keySet = collection.immutable.Set(keySetJava.toList: _*)
 
       println(keySet.toList)
       keySet.foreach {
