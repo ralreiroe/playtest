@@ -6,6 +6,7 @@ import org.scalatest.{FlatSpec, Matchers}
 /**
   * requires build.sbt javaOptions += "-Dconfig.file=/i/p/ralfoenning/playtest/test/resources/application2.conf"
 
+  * https://stackoverflow.com/questions/19060623/passing-jvm-args-through-sbt
   */
 class TypesafeConfigSpec3 extends FlatSpec with Matchers {
 
