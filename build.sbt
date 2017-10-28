@@ -15,6 +15,8 @@ libraryDependencies += "com.typesafe.play" %% "play-ws-standalone-json" % "1.0.1
 libraryDependencies += "com.typesafe.play" %% "play-ws-standalone-xml" % "1.0.1"
 
 
+javaOptions += "-Dconfig.file=/i/p/ralfoenning/playtest/test/resources/application2.conf"
+
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "com.example.controllers._"
 
