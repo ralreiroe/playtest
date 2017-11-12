@@ -1,4 +1,4 @@
-package controllers
+package typesafeconfig
 
 import java.util
 

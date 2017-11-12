@@ -1,4 +1,4 @@
-package controllers
+package typesafeconfig
 
 import com.typesafe.config.ConfigFactory
 import org.scalatest.{FlatSpec, Matchers}
