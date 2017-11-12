@@ -14,6 +14,9 @@ libraryDependencies += "com.typesafe.play" %% "play-ahc-ws-standalone" % "1.0.1"
 libraryDependencies += "com.typesafe.play" %% "play-ws-standalone-json" % "1.0.1"
 libraryDependencies += "com.typesafe.play" %% "play-ws-standalone-xml" % "1.0.1"
 
+libraryDependencies += "com.github.kxbmap" %% "configs" % "0.4.4"
+
+
 
 fork in Test := true
 envVars in Test := Map("envbasedir" -> "foo")
